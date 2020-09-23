@@ -8,8 +8,14 @@ set showmatch
 set ignorecase
 set smartcase
 
+" built in search looks better
+nnoremap / :action Find<CR>
+
+" preserve ideavim search
+nnoremap g/ /
+
 " clear search results with enter
-map <CR> :noh <Cr>
+map <CR> :noh <CR>
 
 " makes substitutions global by default
 set gdefault
@@ -23,6 +29,10 @@ set highlightedyank
 " https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md#surround
 set surround
 
+" closing / reopen tabs
+nmap <leader>q :action CloseContent<CR>
+nmap <leader>Q :action ReopenClosedTab<CR>
+
 " jump to start/end of code block
 map <Leader>[ :action EditorCodeBlockStart<CR>
 map <Leader>] :action EditorCodeBlockEnd<CR>
@@ -33,17 +43,27 @@ map <Leader>o :action ActivateProjectToolWindow<CR>
 " select all
 map <Leader>a ggVG
 
+" copy to system clipboard as well
+set clipboard+=unnamed
+
+" relative line number toggle
+set number relativenumber
+map <Leader># :set rnu!<CR>
+
 " git blame
 map <Leader>gb :action Annotate<CR>
 
 " open buffer menu
 map <Leader>bu :action Switcher<CR>
 
+" code refactoring
+nnoremap <Leader>r :action RenameElement<CR>
+
 " open terminal
 map <Leader>t :action ActivateTerminalToolWindow<CR>
 
 " jump to implementation
-map <Leader>i :action GotoImplementation<CR>
+map <Leader>in :action GotoImplementation<CR>
 
 " find usages
 map <Leader>fu :action ShowUsages<CR>
@@ -73,8 +93,8 @@ nnoremap <Leader>sv :source ~/.ideavimrc<CR>
 nmap <Leader><Leader> :action RecentChangedFiles<CR>
 
 " tabs
-nnoremap [b :action PreviousTab<cr>
-nnoremap ]b :action NextTab<cr>
+nnoremap [b :action PreviousTab<CR>
+nnoremap ]b :action NextTab<CR>
 
 " Additional Reference
 " - https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
