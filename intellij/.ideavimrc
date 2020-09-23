@@ -8,12 +8,6 @@ set showmatch
 set ignorecase
 set smartcase
 
-" built in search looks better
-nnoremap / :action Find<CR>
-
-" preserve ideavim search
-nnoremap g/ /
-
 " clear search results with enter
 map <CR> :noh <CR>
 
@@ -78,10 +72,10 @@ nmap <Leader>k <C-W>k
 nmap <Leader>j <C-W>j
 
 " open new horizontal split
-nmap <Leader>s :split<CR>
+nmap <Leader>sp :split<CR>
 
 " open new vertical split
-nmap <Leader>vs :vsplit<CR>
+nmap <Leader>vsp :vsplit<CR>
 
 " Open my .ideavimrc in a new vsplit
 nnoremap <Leader>ev :vsplit ~/.ideavimrc<CR>
