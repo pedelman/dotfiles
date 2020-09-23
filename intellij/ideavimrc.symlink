@@ -1,0 +1,81 @@
+" leader key
+let mapleader="\"
+
+" search
+set incsearch
+set hlsearch
+set showmatch
+set ignorecase
+set smartcase
+
+" clear search results with enter
+map <CR> :noh <Cr>
+
+" makes substitutions global by default
+set gdefault
+
+" Save a keystroke in normal mode
+nnoremap ; :
+
+" https://youtrack.jetbrains.com/issue/VIM-1970
+set highlightedyank
+
+" https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md#surround
+set surround
+
+" jump to start/end of code block
+map <Leader>[ :action EditorCodeBlockStart<CR>
+map <Leader>] :action EditorCodeBlockEnd<CR>
+
+" opens the project tool window
+map <Leader>o :action ActivateProjectToolWindow<CR>
+
+" select all
+map <Leader>a ggVG
+
+" git blame
+map <Leader>gb :action Annotate<CR>
+
+" open buffer menu
+map <Leader>bu :action Switcher<CR>
+
+" open terminal
+map <Leader>t :action ActivateTerminalToolWindow<CR>
+
+" jump to implementation
+map <Leader>i :action GotoImplementation<CR>
+
+" find usages
+map <Leader>fu :action ShowUsages<CR>
+
+" open the intention menu (type inference)
+map <Leader>' :action ShowIntentionActions<CR>
+
+" key bindings for quickly moving between split windows
+nmap <Leader>h <C-W>h
+nmap <Leader>l <C-W>l
+nmap <Leader>k <C-W>k
+nmap <Leader>j <C-W>j
+
+" open new horizontal split
+nmap <Leader>s :split<CR>
+
+" open new vertical split
+nmap <Leader>vs :vsplit<CR>
+
+" Open my .ideavimrc in a new vsplit
+nnoremap <Leader>ev :vsplit ~/.ideavimrc<CR>
+
+" reload .ideavimrc to apply changes without reset
+nnoremap <Leader>sv :source ~/.ideavimrc<CR>
+
+" recently changed files
+nmap <Leader><Leader> :action RecentChangedFiles<CR>
+
+" tabs
+nnoremap [b :action PreviousTab<cr>
+nnoremap ]b :action NextTab<cr>
+
+" Additional Reference
+" - https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+" - https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md
