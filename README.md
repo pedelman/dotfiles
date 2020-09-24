@@ -1,5 +1,5 @@
 # dotfiles
-This project is designed to be run using GNU Stow. You can also manage the synlinks yourself or
+This project is designed to be run using GNU Stow. You can also manage the symlinks yourself or
 copy the files manually.
 
 - Install Stow (`brew install stow`)
